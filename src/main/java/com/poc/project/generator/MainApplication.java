@@ -17,11 +17,10 @@ import org.springframework.core.env.Environment;
 				pattern="com\\.poc\\.project\\.generator\\..*")
 })
 @Import({CustomInitializrConfiguration.class })
-//@PropertySource("classpath:custom-application.yml")
-public class DemoApplication {
+public class MainApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(DemoApplication.class, args);
+		SpringApplication.run(MainApplication.class, args);
 	}
 
 	@Bean
@@ -29,9 +28,6 @@ public class DemoApplication {
 	public TemplateRenderer templateRenderer(Environment environment) {
 		Binder binder = Binder.get(environment);
 		boolean cache = binder.bind("spring.mustache.cache", Boolean.class).orElse(true);
-		TemplateRenderer templateRenderer = new MustacheTemplateRenderer("classpath:/templates/");
-		return templateRenderer;
+		return new MustacheTemplateRenderer("classpath:/templates/");
 	}
 }
-
-

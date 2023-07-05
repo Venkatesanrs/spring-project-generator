@@ -1,10 +1,10 @@
 custom:
   initializr:
-#    javaVersions:
-#      - id: 11
-#        default: false
-#      - id: 1.8
-#        default: true
+    javaVersions:
+      - id: 11
+        default: true
+      - id: 1.8
+        default: false
     languages:
       - name: Java
         id: java
