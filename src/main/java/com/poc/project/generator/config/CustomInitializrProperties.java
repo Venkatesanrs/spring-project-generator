@@ -1,4 +1,4 @@
-package com.poc.project.generator;
+package com.poc.project.generator.config;
 
 import io.spring.initializr.metadata.InitializrProperties;
 import lombok.Data;

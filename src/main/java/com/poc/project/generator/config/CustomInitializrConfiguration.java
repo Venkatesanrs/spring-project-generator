@@ -1,6 +1,7 @@
-package com.poc.project.generator;
+package com.poc.project.generator.config;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.poc.project.generator.config.CustomInitializrProperties;
 import io.spring.initializr.metadata.InitializrMetadata;
 import io.spring.initializr.metadata.InitializrMetadataBuilder;
 import io.spring.initializr.metadata.InitializrMetadataProvider;
@@ -19,7 +20,7 @@ import org.springframework.web.client.RestTemplate;
 @Configuration
 @EnableConfigurationProperties(CustomInitializrProperties.class)
 
-class CustomInitializrConfiguration {
+public class CustomInitializrConfiguration {
 
     private final RestTemplate restTemplate = new RestTemplateBuilder().build();
     private final ObjectMapper objectMapper = new ObjectMapper();

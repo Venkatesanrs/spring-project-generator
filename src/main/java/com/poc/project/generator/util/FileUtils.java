@@ -1,4 +1,4 @@
-package com.poc.project.generator.utils;
+package com.poc.project.generator.util;
 
 import java.io.IOException;
 import java.nio.file.Files;

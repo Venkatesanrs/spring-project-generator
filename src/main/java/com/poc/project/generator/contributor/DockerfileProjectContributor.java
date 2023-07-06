@@ -1,6 +1,6 @@
-package com.poc.project.generator;
+package com.poc.project.generator.contributor;
 
-import com.poc.project.generator.utils.FileUtils;
+import com.poc.project.generator.util.FileUtils;
 import io.spring.initializr.generator.io.template.TemplateRenderer;
 import io.spring.initializr.generator.project.ProjectDescription;
 import io.spring.initializr.generator.project.contributor.ProjectContributor;
@@ -31,7 +31,7 @@ public class DockerfileProjectContributor implements ProjectContributor {
 
     private void loadMainResources(Path projectRoot) throws IOException {
         Files.createDirectories(projectRoot.resolve("src/main/resources"));
-
+System.out.println("vvvvvvvvvvvvvvvvv");
         Map<String, String> mp = Map.of("packageName", projectDescription.getPackageName());
         String ss = templateRenderer.render("SwaggerConfig", mp);
 

@@ -1,14 +1,12 @@
 package com.poc.project.generator;
 
-import io.spring.initializr.generator.io.template.MustacheTemplateRenderer;
-import io.spring.initializr.generator.io.template.TemplateRenderer;
+import com.poc.project.generator.config.CustomInitializrConfiguration;
 import io.spring.initializr.generator.project.ProjectGenerationConfiguration;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
-import org.springframework.boot.context.properties.bind.Binder;
-import org.springframework.context.annotation.*;
-import org.springframework.core.env.Environment;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.FilterType;
+import org.springframework.context.annotation.Import;
 
 @SpringBootApplication
 @ComponentScan(excludeFilters = {
@@ -23,11 +21,4 @@ public class MainApplication {
 		SpringApplication.run(MainApplication.class, args);
 	}
 
-	@Bean
-	@ConditionalOnMissingBean
-	public TemplateRenderer templateRenderer(Environment environment) {
-		Binder binder = Binder.get(environment);
-		boolean cache = binder.bind("spring.mustache.cache", Boolean.class).orElse(true);
-		return new MustacheTemplateRenderer("classpath:/templates/");
-	}
 }
