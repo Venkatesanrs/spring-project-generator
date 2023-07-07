@@ -11,7 +11,6 @@ import org.springframework.core.env.Environment;
 
 @ProjectGenerationConfiguration
 @ComponentScan(basePackages = "com.poc.project.generator.contributor")
-//@ConditionalOnRequestedDependency("web")
 public class ProjectGeneratorConfiguration {
 
     @Bean

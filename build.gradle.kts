@@ -37,3 +37,9 @@ dependencyManagement {
 tasks.withType<Test> {
 	useJUnitPlatform()
 }
+
+tasks.jar {
+	enabled = true
+	// Remove `plain` postfix from jar file name
+	archiveClassifier.set("")
+}
