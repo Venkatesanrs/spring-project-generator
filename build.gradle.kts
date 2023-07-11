@@ -26,6 +26,8 @@ dependencies {
 	implementation("javax.servlet:javax.servlet-api:3.0.1")
 	implementation("org.springframework.boot:spring-boot-starter-mustache:3.1.0")
 	annotationProcessor("org.projectlombok:lombok:1.18.28")
+	implementation("javax.cache:cache-api")
+	implementation("org.ehcache:ehcache:3.1.0")
 }
 
 dependencyManagement {

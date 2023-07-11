@@ -2,7 +2,7 @@ FROM openjdk:8-jdk-alpine
 
 ARG JAR_FILE=target/find-links.jar
 ARG JAR_LIB_FILE=target/lib/
-
+#build/libs/demo-4-0.0.1-SNAPSHOT.jar
 # cd /usr/local/runme
 WORKDIR /usr/local/runme
 

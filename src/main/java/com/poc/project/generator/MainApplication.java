@@ -4,11 +4,13 @@ import com.poc.project.generator.config.CustomInitializrConfiguration;
 import io.spring.initializr.generator.project.ProjectGenerationConfiguration;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.FilterType;
 import org.springframework.context.annotation.Import;
 
 @SpringBootApplication
+@EnableCaching
 @ComponentScan(excludeFilters = {
 		@ComponentScan.Filter(type = FilterType.ANNOTATION, value = ProjectGenerationConfiguration.class),
 		@ComponentScan.Filter(type=FilterType.REGEX,

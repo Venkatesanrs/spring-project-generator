@@ -61,7 +61,7 @@ custom:
             artifactId: my-api
       - name: Web
         content:
-          - name: Web2
+          - name: Web
             id: web
 spring:
   mustache:
