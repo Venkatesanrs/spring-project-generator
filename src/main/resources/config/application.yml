@@ -1,10 +1,12 @@
 custom:
   initializr:
     javaVersions:
-      - id: 11
-        default: true
       - id: 1.8
         default: false
+      - id: 11
+        default: false
+      - id: 17
+        default: true
     languages:
       - name: Java
         id: java
@@ -20,11 +22,11 @@ custom:
         id: war
         default: false
     group-id:
-      value: org.acme
+      value: org.demo
     artifact-id:
-      value: my-appp
+      value: my-app
     package-name:
-      value: org.acme.myappp
+      value: org.demo.myapp
     types:
       - name: Maven Project
         id: maven-project

@@ -1,7 +1,6 @@
 package com.poc.project.generator.config;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.poc.project.generator.config.CustomInitializrProperties;
 import io.spring.initializr.metadata.InitializrMetadata;
 import io.spring.initializr.metadata.InitializrMetadataBuilder;
 import io.spring.initializr.metadata.InitializrMetadataProvider;
@@ -24,10 +23,15 @@ public class CustomInitializrConfiguration {
 
     private final RestTemplate restTemplate = new RestTemplateBuilder().build();
     private final ObjectMapper objectMapper = new ObjectMapper();
+    private final InitializrMetadataUpdateStrategy initializrMetadataUpdateStrategy = new SaganInitializrMetadataUpdateStrategy(restTemplate, objectMapper);
 
     @Autowired
     private CustomInitializrProperties customInitializrProperties;
-    InitializrMetadataUpdateStrategy initializrMetadataUpdateStrategy = new SaganInitializrMetadataUpdateStrategy(restTemplate, objectMapper);
+
+    @Bean
+    public static PropertySourcesPlaceholderConfigurer propertySourcesPlaceholderConfigurer() {
+        return new PropertySourcesPlaceholderConfigurer();
+    }
 
     @Bean
     InitializrMetadataProvider customInitializrMetadataProvider(InitializrProperties initializrProperties) {
@@ -38,10 +42,5 @@ public class CustomInitializrConfiguration {
                 .build();
 
         return new DefaultInitializrMetadataProvider(i, initializrMetadataUpdateStrategy);
-    }
-
-    @Bean
-    public static PropertySourcesPlaceholderConfigurer propertySourcesPlaceholderConfigurer() {
-        return new PropertySourcesPlaceholderConfigurer();
     }
 }

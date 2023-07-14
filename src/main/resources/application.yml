@@ -1549,6 +1549,3 @@ initializr:
     - name : 2.7.8
       id: 2.7.8
       default: false
-spring:
-  mustache:
-    prefix: classpath:/templates/
