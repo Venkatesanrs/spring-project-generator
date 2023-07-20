@@ -55,7 +55,7 @@ custom:
         name: 2.3.2
         default: true
     dependencies:
-      - name: test
+      - name: aa
         content:
           - name: My API
             id: my-api
